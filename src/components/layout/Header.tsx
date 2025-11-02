@@ -45,7 +45,7 @@ export default function NavbarDemo() {
         </NavBody>
         <MobileNav>
           <MobileNavHeader>
-            <Image src={Logo} width={20} height={20} alt=""/>
+            <Image src={Logo} width={40} height={40} alt=""/>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

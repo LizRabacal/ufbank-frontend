@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa6";
 export function Text() {
     return (
         <HeroHighlight containerClassName="!min-h-screen " className="bg-transpartent flex w-full !min-h-screen ">
-            <div className="w-2/3 flex flex-col p-10 justify-center items-center">
+            <div className="md:w-2/3 w-full flex flex-col p-10 justify-center items-center">
                 <motion.h1
                     initial={{
                         opacity: 0,
@@ -31,14 +31,14 @@ export function Text() {
                     </Highlight>
                 </motion.h1>
                 <div className=" flex w-full justify-end mt-14">
-                    <button className="!cursor-pointer rounded-lg flex justify-between gap-4 items-center px-10 py-4 text-2xl bg-green-500 hover:bg-green-600 font-semibold text-white">
+                    <button className="!cursor-pointer rounded-lg flex justify-between gap-4 items-center md:px-10 md:py-4 md:text-2xl px-2 py-2 bg-green-500 hover:bg-green-600 font-semibold text-white">
                         Venha fazer parte!
                         <FaArrowRight />
                     </button>
 
                 </div>
             </div>
-            <div className="w-1/2 flex flex-col justify-end">
+            <div className="w-1/2  flex-col justify-end hidden md:flex">
                 <Image alt='' width={1000} height={1000} className="" src={"/mulher.png"} />
             </div>
 
