@@ -36,7 +36,6 @@ export default function NavbarDemo() {
 
   return (
       <Navbar className="top-5 pb-2 flex">
-        lalal
         <NavBody className="shadow-lg bg-white">
          <Image className="ml-2" src={Logo} width={50} height={50} alt=""/>
           <NavItems items={navItems} />
