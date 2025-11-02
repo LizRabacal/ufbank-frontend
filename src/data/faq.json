@@ -1,0 +1,24 @@
+{
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "O que é a Conta Digital Ufbank?",
+      "resposta": "É uma conta corrente 100% digital, sem tarifas de manutenção, que oferece todos os serviços bancários essenciais: PIX, TED, saques, cartão de crédito (sujeito a análise) e investimentos."
+    },
+    {
+      "id": 2,
+      "pergunta": "Como faço para abrir uma conta?",
+      "resposta": "O processo é totalmente online. Baixe nosso aplicativo, clique em 'Abrir Conta' e siga as instruções, enviando uma foto do seu documento de identificação e uma selfie. A análise é rápida e a conta é liberada em minutos."
+    },
+    {
+      "id": 3,
+      "pergunta": "A Spartacus oferece cartão de crédito?",
+      "resposta": "Sim. O cartão de crédito é emitido com a bandeira Mastercard e está sujeito à análise de crédito no momento da abertura da conta. Ele oferece benefícios como cashback em todas as compras."
+    },
+    {
+      "id": 4,
+      "pergunta": "Quais são as taxas de saque?",
+      "resposta": "A Conta Essencial oferece 4 saques gratuitos por mês em caixas eletrônicos da rede Banco24Horas. A partir do quinto saque, é cobrada uma pequena taxa de R$ 6,90."
+    }
+  ]
+}

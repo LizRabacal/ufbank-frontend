@@ -1,0 +1,41 @@
+{
+  "last_updated": "2025-11-02T16:00:00Z",
+  "planos": [
+    {
+      "nome": "Conta Essencial (Padrão)",
+      "idealPara": "Uso diário e básico",
+      "precoMensal": "R$ 0,00",
+      "beneficios": [
+        "Conta digital 100% gratuita",
+        "Cartão de débito/crédito (sujeito a análise)",
+        "PIX e TEDs ilimitados (grátis)",
+        "4 saques gratuitos por mês"
+      ],
+      "destaque": false
+    },
+    {
+      "nome": "Conta Premium UF",
+      "idealPara": "Investidores e clientes alta renda",
+      "precoMensal": "R$ 39,90",
+      "beneficios": [
+        "Cashback Turbinado (1,5% em todas as compras)",
+        "Gerente exclusivo via chat",
+        "Acesso gratuito à Sala VIP (aeroportos)",
+        "Rendimento automático do saldo em conta"
+      ],
+      "destaque": true
+    },
+    {
+      "nome": "Conta PJ Startup",
+      "idealPara": "Pequenas empresas e MEIs",
+      "precoMensal": "R$ 0,00",
+      "beneficios": [
+        "Emissão ilimitada de boletos",
+        "Máquina de cartão com as melhores taxas",
+        "PIX e TEDs PJ gratuitos",
+        "Plataforma de gestão financeira integrada"
+      ],
+      "destaque": false
+    }
+  ]
+}
