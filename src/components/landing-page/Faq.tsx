@@ -11,7 +11,7 @@ interface PerguntaResposta {
 }
 
 async function getFaqData() : Promise<PerguntaResposta[]>{
-  const response = await getFaq()
+  const response = await getFaq();
 
   return response?.data ? Object.values(response?.data) : [];
 }
