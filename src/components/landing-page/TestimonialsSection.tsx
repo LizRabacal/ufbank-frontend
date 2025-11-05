@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Loader2 } from 'lucide-react'; 
+import { Loader2 } from 'lucide-react';
+import { getDepoimentos } from "@/data/depoimentos";
 
 interface Testimonial {
     quote: string;
@@ -11,7 +12,7 @@ interface Testimonial {
 
 
 const TestimonialCard = ({ quote, name, title }: Testimonial) => (
-  <div className="flex-shrink-0 w-[350px] p-6 m-4 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+  <div className="flex-shrink-0 w-[450px] h-[200px] content-between p-6 m-4 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
     <blockquote className="text-gray-700 italic text-sm">
       "{quote}"
     </blockquote>
@@ -30,15 +31,16 @@ export default function InfiniteScrollTestimonials() {
   useEffect(() => {
     async function fetchTestimonials() {
       try {
-        const response = await fetch('/api/depoimentos'); 
-        const data = await response.json();
-
+        const response = await getDepoimentos();
+        const data = Object.values(response.data ?? {});
+        console.log(data)
+        console.log(response)
         const mappedData = data.map((item: any) => ({
             quote: item.quote,
             name: item.name,
             title: item.tittle,
         }));
-        
+
         setTestimonials([...mappedData, ...mappedData]);
 
       } catch (err) {
@@ -71,8 +73,9 @@ export default function InfiniteScrollTestimonials() {
         <h2 className="text-4xl font-extrabold text-center mb-10 text-[#1D4A8C] dark:text-white">
             O que nossos clientes dizem
         </h2>
-    
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)]">
+
+        <div className="w-fullinline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)]">
+                  <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)]">
             <div className="flex animate-infinite-scroll">
                 {testimonials.map((item, index) => (
                     <TestimonialCard key={index} {...item} />
@@ -84,7 +87,7 @@ export default function InfiniteScrollTestimonials() {
                     <TestimonialCard key={`copy-${index}`} {...item} />
                 ))}
             </div>
-
+            </div>
         </div>
     </section>
   );

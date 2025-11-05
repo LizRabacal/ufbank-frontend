@@ -1,23 +1,15 @@
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { CardContainer } from "@/components/ui/3d-card";
+import { getPlanos } from "@/data/plano";
 
 export default async function PlanosETarifas() {
 
-  const apiUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000/api/planos'
-    : 'https://seusite.com/api/planos';
+  const response = await getPlanos();
 
-  // O Next.js trata isso como uma chamada Server-Side Fetch
-  // Você pode usar 'next: { revalidate: 86400 }' para forçar o ISR (24h)
-  const response = await fetch(apiUrl, { next: { revalidate: 86400 } });
-
-  if (!response.ok) {
-    // Tratar falha na busca
+  if (!response.success) {
     return <div className="text-center p-20 text-red-600">Erro ao carregar os planos.</div>;
   }
 
-  const data = await response.json();
-  const planos = data.planos;
-  const lastUpdated = data.last_updated;
+  const planos = Object.values(response.data ?? []) as any;
 
   if (!planos || planos.length === 0) {
     return <div className="text-center p-20">Não há planos disponíveis no momento.</div>;
@@ -50,7 +42,7 @@ export default async function PlanosETarifas() {
               </div>
 
               <ul className="space-y-3">
-                {plano.beneficios.map((b: any, idx: any) => (
+                {Object.values(plano.beneficios).map((b: any, idx: any) => (
                   <li key={idx} className={`flex items-start ${plano.destaque ? 'text-white' : 'text-gray-600'}`}>
                     <span className={`text-lg mr-2 ${plano.destaque ? 'text-[#74B72D]' : 'text-[#74B72D]'}`}>
                       ✔
@@ -72,10 +64,6 @@ export default async function PlanosETarifas() {
           </CardContainer>
         ))}
       </div>
-
-      <p className="text-center text-sm text-gray-500 mt-10">
-        Última atualização dos planos: {new Date(lastUpdated).toLocaleDateString('pt-BR')}
-      </p>
     </section>
   );
 }
