@@ -1,6 +1,8 @@
 import { CardContainer } from "@/components/ui/3d-card";
 import { getPlanos } from "@/data/plano";
 
+export const dynamic = 'force-dynamic';
+
 export default async function PlanosETarifas() {
 
   const response = await getPlanos();
